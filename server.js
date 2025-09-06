@@ -23,9 +23,9 @@ mongoose.connect(process.env.MONGODB_URI)
 // routes
 app.use("/api/quotes", quoteRoutes);
 //
-// app.get("/", (req, res) => {
-//   res.send("API is running!");
-// });
+app.get("/", (req, res) => {
+  res.send("API is running!");
+});
 
 //server port
 const PORT = process.env.PORT || 4000;
