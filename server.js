@@ -7,13 +7,12 @@ const aiQuoteRouter =require("./routes/gemini.js");
 const cors = require("cors");
 
 
-
-
 //app aplication 
 const app = express();
 app.use(express.json());
 app.use(cors());
 app.use("/api", aiQuoteRouter);
+
 //database connection 
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log("Data connect successfully"))
@@ -22,7 +21,8 @@ mongoose.connect(process.env.MONGODB_URI)
 
 // routes
 app.use("/api/quotes", quoteRoutes);
-//
+
+// test first api 
 app.get("/", (req, res) => {
   res.send("API is running!");
 });
